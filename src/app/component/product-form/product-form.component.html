@@ -1,0 +1,65 @@
+<!-- Formulario para agregar productos -->
+<form #productForm="ngForm" (ngSubmit)="onSubmit()" class="product-form">
+  <h2>Agregar Producto</h2>
+  <input
+    type="text"
+    placeholder="Nombre"
+    [(ngModel)]="name"
+    name="name"
+    required
+    [ngClass]="{ invalid: isControlInvalid('name') }"
+  />
+
+  <input
+    type="text"
+    placeholder="Descripción"
+    [(ngModel)]="description"
+    name="description"
+    required
+    [ngClass]="{ invalid: isControlInvalid('description') }"
+  />
+
+  <select
+    [(ngModel)]="category"
+    name="category"
+    required
+    [ngClass]="{ invalid: isControlInvalid('category') }"
+  >
+    <option value="" disabled selected>Selecciona una categoría</option>
+    <option value="Fruta">Fruta</option>
+    <option value="Verdura">Verdura</option>
+    <option value="Bebida">Bebida</option>
+  </select>
+
+  <input
+    type="number"
+    placeholder="Cantidad"
+    [(ngModel)]="quantity"
+    name="quantity"
+    min="0"
+    required
+    [ngClass]="{ invalid: isControlInvalid('quantity') }"
+  />
+
+  <input
+    type="text"
+    placeholder="URL de imagen"
+    [(ngModel)]="image"
+    name="image"
+    required
+    [ngClass]="{ invalid: isControlInvalid('image') }"
+  />
+
+  <input
+    type="number"
+    placeholder="Precio"
+    [(ngModel)]="price"
+    name="price"
+    min="0"
+    step="0.01"
+    required
+    [ngClass]="{ invalid: isControlInvalid('price') }"
+  />
+
+  <button type="submit" [disabled]="!productForm || productForm.invalid">Agregar Producto</button>
+</form>

@@ -1,0 +1,87 @@
+/* Contenedor del formulario de productos */
+.product-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  padding: 1.5rem;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  background-color: #f0f4f8;
+  width: 300px;
+}
+
+/* Estilos responsivos para pantallas pequeñas */
+@media (max-width: 768px) {
+  .product-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .product-form {
+    width: 90%;
+  }
+
+  .product-list {
+    justify-content: center;
+  }
+}
+
+/* Estilos de los inputs del formulario */
+.product-form input,
+.product-form select {
+  padding: 0.6rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+/* Estilos al enfocar los inputs y select */
+.product-form input:focus,
+.product-form select:focus {
+  border-color: #2563EB;
+  box-shadow: 0 0 5px rgba(37, 99, 235, 0.5);
+  outline: none;
+}
+
+/* Estilos para campos inválidos */
+.invalid {
+  border-color: #DC2626 !important;
+  box-shadow: 0 0 5px rgba(220, 38, 38, 0.5);
+}
+
+/* Botón principal del formulario */
+.product-form button {
+  background-color: #1E40AF;
+  color: white;
+  padding: 0.8rem;
+  border-radius: 8px;
+  font-weight: bold;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.3s;
+}
+
+/* Efecto al pasar el mouse sobre el botón */
+.product-form button:hover {
+  background-color: #1D4ED8;
+  transform: scale(1.05);
+}
+
+/* Botón deshabilitado */
+.product-form button:disabled {
+  background-color: #9CA3AF;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.product-form button:disabled:hover {
+  background-color: #9CA3AF;
+  transform: none;
+}
+
+/* Título del formulario */
+.product-form h2 {
+  margin: 0 0 0.5rem 0;
+  text-align: center;
+  color: #1E40AF;
+}

@@ -1,0 +1,21 @@
+<div class="product-container">
+  <!-- Formulario a la izquierda -->
+  <app-product-form (addProduct)="addProduct($event)"></app-product-form>
+
+  <!-- Filtro -->
+  <input type="text" placeholder="Filtrar por categoría" [(ngModel)]="filterCategory">
+
+  <!-- Lista de productos a la derecha -->
+  <div class="product-list">
+    <div *ngIf="products.length === 0" class="no-products">No hay productos</div>
+    <div class="product-card" *ngFor="let product of products | filter:filterCategory; index as i" [ngClass]="{'low-stock': product.quantity < 5, 'card-color': true, 'card-fruta': product.category === 'Fruta', 'card-verdura': product.category === 'Verdura', 'card-bebida': product.category === 'Bebida'}">
+      <img [src]="product.image" alt="{{product.name}}">
+      <h3>{{product.name}}</h3>
+      <p>Descripción: {{product.description}}</p>
+      <p>Precio: S/ {{product.price}}</p>
+      <p>Categoría: {{product.category}}</p>
+      <p>Cantidad: {{product.quantity}}</p>
+      <button (click)="removeProduct(i)">Eliminar</button>
+    </div>
+  </div>
+</div>
