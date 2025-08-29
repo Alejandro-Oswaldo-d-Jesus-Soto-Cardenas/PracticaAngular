@@ -2,8 +2,15 @@
   <!-- Formulario a la izquierda -->
   <app-product-form (addProduct)="addProduct($event)"></app-product-form>
 
-  <!-- Filtro -->
-  <input type="text" placeholder="Filtrar por categoría" [(ngModel)]="filterCategory">
+ <!-- Filtro con diseño mejorado -->
+<div class="filter-section">
+  <input 
+    type="text" 
+    placeholder="🔍 Filtrar por categoría (ej. Fruta, Verdura)" 
+    [(ngModel)]="filterCategory" 
+    class="filter-input">
+</div>
+
 
   <!-- Lista de productos a la derecha -->
   <div class="product-list">
